@@ -1,0 +1,43 @@
+{
+  "name": "yarl-base",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev-client": "webpack-dev-server --port 3020"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-plugin-transform-class-properties": "^6.23.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-latest": "^6.24.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "body-parser": "^1.17.1",
+    "commander": "^2.9.0",
+    "core-decorators": "^0.15.0",
+    "express": "^4.15.2",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-hot-loader": "next",
+    "react-hotkeys": "^0.9.0",
+    "react-redux": "^5.0.3",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0",
+    "socket.io": "^1.7.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-react": "^6.23.0",
+    "electron": "^1.6.2",
+    "eslint": "^3.17.1",
+    "eslint-plugin-react": "^6.10.0",
+    "json-loader": "^0.5.4",
+    "postcss-loader": "^1.3.3",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.14.1",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.2"
+  }
+}
