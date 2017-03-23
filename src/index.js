@@ -1,5 +1,6 @@
 
-
+// Load any external stuff you need.
+// import 'grommet/scss/vanilla/index';
 // Import This First Before importing your modules or other Yarl content.
 import Yarl from 'yarl';
 
@@ -21,5 +22,9 @@ window.$a = (actionName) => {
   return window.Context.Actions[actionName];
 }
 
+window.stahp = (e) => {
+  e.preventDefault();
+  return false;
+}
 // Finally, Invoke Render
 Yarl.render();

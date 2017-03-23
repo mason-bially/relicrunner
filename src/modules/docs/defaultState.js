@@ -1,6 +1,6 @@
 
 'use babel'
 export default {
-  docsIndex: "",
+  index: "",
   filter: ""
 };

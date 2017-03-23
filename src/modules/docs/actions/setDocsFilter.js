@@ -2,12 +2,12 @@
 'use babel'
 import {compose} from 'redux';
 
-import {Reducable, Documentable, Tagable, Testable} from 'Yarl';
+import {Reducable, Documentable, Tagable, Testable} from 'yarl';
 
-function setDocsFilter(query) {
+function setDocsFilter(filter) {
   return {
     type: this.type,
-    query
+    filter
   }
 }
 
@@ -15,23 +15,23 @@ export default compose(
   Reducable((state, action) => {
     return {
       ...state,
-      app: {
-        ...state.apps,
-        docs: {
-          ...state.apps.docs,
-          filter: action.query
-        }
+      docs: {
+        ...state.docs,
+        filter: action.filter
       }
     }
   }),
   Documentable({
-    text: `
+    text:
+    `
     # Action setDocsFilter
     TODO Document the Action name
-    `,
-    args: {
+    * Do Thing
+    * Another Thing
+  `,
+args: {
 
-    }
+}
   }),
   Tagable({
     platform: 'any',

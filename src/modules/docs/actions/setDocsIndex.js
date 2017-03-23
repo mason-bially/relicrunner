@@ -2,7 +2,7 @@
 'use babel'
 import {compose} from 'redux';
 
-import {Reducable, Documentable, Tagable, Testable} from 'Yarl';
+import {Reducable, Documentable, Tagable, Testable} from 'yarl';
 
 function setDocsIndex(index) {
   return {
@@ -15,12 +15,9 @@ export default compose(
   Reducable((state, action) => {
     return {
       ...state,
-      app: {
-        ...state.apps,
-        docs: {
-          ...state.apps.docs,
-          index: action.index
-        }
+      docs: {
+        ...state.docs,
+        index: action.index
       }
     }
   }),

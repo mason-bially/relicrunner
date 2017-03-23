@@ -11,7 +11,6 @@ module.exports = {
     './index.js'
   ],
 
-
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: 'bundle.js',
@@ -50,10 +49,18 @@ module.exports = {
         }
       },
       {
-        test: /\.(png|woff2|svg|ttf|woff|eot)(\?.*)?$/,
-        loader: "url",
-        exclude: /node_modules/
+			 test: /\.scss$/,
+			 loader: [
+         'style',
+         'css',
+         'scss'
+       ]
       },
+      // {
+      //   test: /\.(png|woff2|svg|ttf|woff|eot)(\?.*)?$/,
+      //   loader: "url",
+      //   exclude: /node_modules/
+      // },
     ]
   },
   plugins: [
