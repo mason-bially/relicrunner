@@ -1,6 +1,6 @@
 
 
-// Import This First
+// Import This First Before importing your modules or other Yarl content.
 import Yarl from 'yarl';
 
 // Then Load Modules.
@@ -11,6 +11,15 @@ const defaultState = Yarl.extractDefaultState(modules);
 
 // Then Invoke Yarl's Entrypoint
 window.Context = Yarl.entrypoint(defaultState);
+
+
+// These shorthand methods help with dispatching actions from the command line
+window.$d = (actionType) => {
+  return window.Context.Store.dispatch(actionType);
+}
+window.$a = (actionName) => {
+  return window.Context.Actions[actionName];
+}
 
 // Finally, Invoke Render
 Yarl.render();
