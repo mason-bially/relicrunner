@@ -12,7 +12,7 @@ const defaultState = Yarl.extractDefaultState(modules);
 
 // Then Invoke Yarl's Entrypoint
 window.Context = Yarl.entrypoint(defaultState);
-
+window.modules = modules
 
 // These shorthand methods help with dispatching actions from the command line
 window.$d = (actionType) => {
