@@ -1,0 +1,69 @@
+{
+  "name": "relicrunner",
+  "version": "0.0.1",
+  "scripts": {
+    "dev-client": "webpack-dev-server --port 3020",
+    "server": "node_modules/.bin/nodemon server/index.js --watch server --exec 'babel-node --presets es2015,stage-2'"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-core": "^6.23.1",
+    "babel-loader": "^6.4.0",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-2": "^6.13.0",
+    "css-loader": "^0.23.1",
+    "json-loader": "^0.5.4",
+    "nodemon": "^1.11.0",
+    "raw-loader": "^0.5.1",
+    "react-hot-loader": "^3.0.0-beta.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.2.1"
+  },
+  "dependencies": {
+    "apollo-client": "^0.5.6",
+    "babel-polyfill": "^6.23.0",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "graphiql": "^0.8.0",
+    "graphql": "0.7.0",
+    "graphql-server-express": "^0.4.3",
+    "graphql-tag": "^0.1.10",
+    "graphql-tools": "^0.6.0",
+    "graphql-type-json": "^0.1.4",
+    "graphql-typings": "0.0.1-beta-2",
+    "jquery": "^",
+    "material-ui": "^0.17.0",
+    "react": "^15.0.0",
+    "react-apollo": "^0.6.0",
+    "react-dom": "^15.0.0",
+    "react-redux": "^4.4.6",
+    "react-tap-event-plugin": "^2.0.1",
+    "redux": "^3.5.2",
+    "redux-devtools": "^3.3.2",
+    "redux-devtools-dock-monitor": "^1.1.1",
+    "redux-devtools-extension": "^1.0.0",
+    "redux-devtools-log-monitor": "^1.2.0",
+    "redux-persist": "^4.0.0-beta1",
+    "redux-thunk": "^2.1.0",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1",
+    "semantic-ui-react": "^0.61.1",
+    "underscore": "^1.8.3",
+    "vis": "^4.18.1",
+    "whatwg-fetch": "^2.0.2"
+  },
+  "description": "Warframe Relic Running website.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mason-bially/relicrunner.git"
+  },
+  "author": "Mason Bially",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mason-bially/relicrunner/issues"
+  },
+  "homepage": "https://github.com/mason-bially/relicrunner#readme"
+}
