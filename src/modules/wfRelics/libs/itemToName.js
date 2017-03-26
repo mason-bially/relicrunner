@@ -20,11 +20,11 @@ const shorthandNames = {
   lk: 'Link',
   nc: 'Neuroptics',
   pc: 'Pouch',
+  rv: 'Receiver',
   sg: 'String',
   sk: 'Stock',
   sm: 'Systems',
   sr: 'Stars',
-  rv: 'Receiver',
   ub: 'Upper Limb',
   wg: 'Wings',
 }
