@@ -4,7 +4,7 @@ import {compose} from 'redux';
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import Remarkable from 'remarkable';
-import {Routable, Documentable, Tagable, Testable, Typable} from 'yarl';
+import {Routable, Documentable, Tagable, Testable, Typable} from '@offbyonestudios/yarl';
 
 import Split from 'grommet/components/Split';
 import Anchor from 'grommet/components/Anchor';

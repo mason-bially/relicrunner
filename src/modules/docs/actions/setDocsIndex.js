@@ -2,7 +2,7 @@
 'use babel'
 import {compose} from 'redux';
 
-import {Reducable, Documentable, Tagable, Testable} from 'yarl';
+import {Reducable, Documentable, Tagable, Testable} from '@offbyonestudios/yarl';
 
 function setDocsIndex(index) {
   return {

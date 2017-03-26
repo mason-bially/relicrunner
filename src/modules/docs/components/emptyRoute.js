@@ -4,7 +4,7 @@ import {compose} from 'redux';
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 
-import {Routable, Documentable, Tagable, Testable, Typable} from 'yarl';
+import {Routable, Documentable, Tagable, Testable, Typable} from '@offbyonestudios/yarl';
 
 import Tiles from 'grommet/components/Tiles';
 import Tile from 'grommet/components/Tile';

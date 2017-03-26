@@ -2,7 +2,7 @@
 // Load any external stuff you need.
 // import 'grommet/scss/vanilla/index';
 // Import This First Before importing your modules or other Yarl content.
-import Yarl from 'yarl';
+import Yarl from '@offbyonestudios/yarl';
 
 // Then Load Modules.
 import modules from './modules';
