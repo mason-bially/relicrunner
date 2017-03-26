@@ -31,15 +31,23 @@ const shorthandNames = {
 
 function itemToName(itemShorthand, upperCase=true, specialName="")
 {
+  let index = 0;
   let sh_parts = itemShorthand.split('.');
 
-  const primaryNameParts = sh_parts[0]
-    .split('-')
-    .map(s => s.charAt(0).toUpperCase() + s.slice(1));
-  let primaryName = Array.from(primaryNameParts).concat([ "Prime" ]);
-  if (specialName != "") primaryName = specialName.split(" ");
+  let res_parts = [];
+  if (sh_parts[index] == "prime") {
+    res_parts = res_parts.concat([ "Prime" ]);
+    index++;
+  }
 
-  sh_parts = primaryName.concat(sh_parts.slice(1).map(
+  res_parts = Array.from(sh_parts[index]
+    .split('-')
+    .map(s => s.charAt(0).toUpperCase() + s.slice(1))).concat(res_parts);
+  index++;
+
+  if (specialName != "") res_parts = specialName.split(" ");
+
+  sh_parts = res_parts.concat(sh_parts.slice(index).map(
     p => (p in shorthandNames) ? shorthandNames[p] : "???")
   );
 

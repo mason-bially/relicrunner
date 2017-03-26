@@ -6,6 +6,8 @@ import {connect} from 'react-redux';
 
 import {Routable, Documentable, Tagable, Testable, Typable} from '@offbyonestudios/yarl';
 
+import Image from 'grommet/components/Image';
+
 import libs from '../libs'
 
 @connect((state) => {
