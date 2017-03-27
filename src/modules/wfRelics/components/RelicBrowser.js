@@ -55,10 +55,10 @@ import libs from '../libs'
 })
 @Typable("Nothing")
 @Routable("RelicBrowser", {
-    displayName: "Browse: Relics",
-    icon: "relic",
-    shortDescription: "Browse warframe relics!"
-  })
+  displayName: "Browse: Relics",
+  icon: "relic",
+  shortDescription: "Browse warframe relics!"
+})
 @connect((state) => {
   return {
     wfRelics: state.app.wfRelics

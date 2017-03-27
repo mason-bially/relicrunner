@@ -12,10 +12,13 @@ function itemToImage(itemShorthand)
   let is_part = sh_parts.length > (index + 1 + (is_bp ? 1 : 0))
 
   if (is_prime && is_part) {
-    return `avt/item/${result}.png`;
+    return `avt/items/part_prime_${sh_parts[index+1]}.png`;
+  }
+  else if (!is_prime && is_part) {
+    return `avt/items/part_${sh_parts[index+1]}.png`;
   }
   else {
-    return `avt/item/default.png`;
+    return `avt/items/default.png`;
   }
 }
 

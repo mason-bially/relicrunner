@@ -15,11 +15,6 @@ import AccordionPanel from 'grommet/components/AccordionPanel';
 
 import RelicItem from './RelicItem';
 
-@connect((state) => {
-  return {
-    //thismodule: state.app.thismodule
-  };
-})
 @Documentable({
   text:
   `
@@ -39,6 +34,11 @@ import RelicItem from './RelicItem';
 })
 @Typable("Nothing")
 @Routable(false, {})
+@connect((state) => {
+  return {
+    wfRelics: state.app.wfRelics
+  };
+})
 export default class RelicDetails extends Component {
   static propTypes = {
     routeProps: PropTypes.object,
@@ -67,7 +67,7 @@ export default class RelicDetails extends Component {
     return (
       <Box>
         <Title>{libs.relicToName(this.props.relic)}</Title>
-        <Accordion animate={false} openMulti={true}>
+        <Accordion animate={false} openMulti={false}>
           {items}
         </Accordion>
       </Box>

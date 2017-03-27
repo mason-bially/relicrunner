@@ -11,11 +11,6 @@ import Card from 'grommet/components/Card';
 
 import libs from '../libs'
 
-@connect((state) => {
-  return {
-    //thismodule: state.app.thismodule
-  };
-})
 @Documentable({
   text:
   `
@@ -34,6 +29,11 @@ import libs from '../libs'
 })
 @Typable("Nothing")
 @Routable(false, {})
+@connect((state) => {
+  return {
+    wfRelics: state.app.wfRelics
+  };
+})
 export default class RelicItem extends Component {
   static propTypes = {
     routeProps: PropTypes.object,
@@ -71,7 +71,7 @@ export default class RelicItem extends Component {
     return (
       <Card contentPad='none' headingStrong={false} size='small'
         thumbnail={this.itemImage()}
-        label={libs.items.itemToName(this.props.relic)} >
+        label={libs.items.itemToName(this.props.item)} >
       </Card>
     );
   }

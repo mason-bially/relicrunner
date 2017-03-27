@@ -11,11 +11,6 @@ import Image from 'grommet/components/Image';
 
 import libs from '../libs'
 
-@connect((state) => {
-  return {
-    //thismodule: state.app.thismodule
-  };
-})
 @Documentable({
   text:
   `
@@ -34,6 +29,11 @@ import libs from '../libs'
 })
 @Typable("Nothing")
 @Routable(false, {})
+@connect((state) => {
+  return {
+    wfRelics: state.app.wfRelics
+  };
+})
 export default class Relic extends Component {
   static propTypes = {
     routeProps: PropTypes.object,
