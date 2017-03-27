@@ -106,7 +106,7 @@ export default class RelicBrowser extends Component {
       if (filter.text != '')
       {
         const terms = filter.text.toLowerCase().split(' ');
-        const search_strs = [name].concat(relic_data.drops.map(e => libs.itemToName(e).toLowerCase()));
+        const search_strs = [name].concat(relic_data.drops.map(e => libs.items.itemToName(e).toLowerCase()));
         if (!search_strs.map((s) => {
           return terms.every((t) => { return s.includes(t); });
         }).some(t => t)) return false;

@@ -63,7 +63,7 @@ export default class RelicItem extends Component {
   itemImage() {
     return (
       <Image fit='contain' size='small'
-        src={libs.itemToImage(this.props.item)}
+        src={libs.items.itemToImage(this.props.item)}
       />)
   }
 
@@ -71,7 +71,7 @@ export default class RelicItem extends Component {
     return (
       <Card contentPad='none' headingStrong={false} size='small'
         thumbnail={this.itemImage()}
-        label={libs.itemToName(this.props.relic)} >
+        label={libs.items.itemToName(this.props.relic)} >
       </Card>
     );
   }
