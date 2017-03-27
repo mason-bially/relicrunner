@@ -18,7 +18,10 @@ export default compose(
       ...state,
       wfRelics: {
         ...state.wfRelics,
-        filter: action.filter
+        filter: {
+          ...state.wfRelics.filter,
+          ...action.filter
+        }
       }
     }
   }),

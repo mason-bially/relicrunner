@@ -56,7 +56,7 @@ export default class RelicDetails extends Component {
 
     const relicData = libs.getRelicData(this.props.relic);
     const items = relicData['drops'].map((e, i) => {
-      const itemName = 'prime.' + e;
+      const itemName = (e != 'forma') ? 'prime.' + e : e;
       return (
         <AccordionPanel key={i} heading={libs.itemToName(itemName)}>
           <RelicItem item={itemName} relic={this.props.relic} />

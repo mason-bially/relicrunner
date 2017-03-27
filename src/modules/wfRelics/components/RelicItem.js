@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 import {Routable, Documentable, Tagable, Testable, Typable} from '@offbyonestudios/yarl';
 
 import Image from 'grommet/components/Image';
+import Card from 'grommet/components/Card';
 
 import libs from '../libs'
 

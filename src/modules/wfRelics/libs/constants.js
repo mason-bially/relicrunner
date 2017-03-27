@@ -3,7 +3,7 @@
 const relics = {
   'lith': {
     a1: {
-      valuted: true,
+      vaulted: true,
       drops: [
         "vasto.rv",
         "braton.bl",
@@ -14,7 +14,7 @@ const relics = {
       ],
     },
     c1: {
-      valuted: true,
+      vaulted: true,
       drops: [
         "fang.bd",
         "nova.nc.bp",
@@ -25,7 +25,7 @@ const relics = {
       ],
     },
     f1: {
-      valuted: true,
+      vaulted: true,
       drops: [
         "fang.bd",
         "paris.bp",
@@ -36,7 +36,7 @@ const relics = {
       ],
     },
     f2: {
-      valuted: true,
+      vaulted: true,
       drops: [
         "odonata.sm.bp",
         "hikou.sr",
@@ -47,7 +47,7 @@ const relics = {
       ],
     },
     g1: {
-      valuted: true,
+      vaulted: true,
       drops: [
         "latron.bp",
         "frost.ci.bp",
@@ -58,7 +58,7 @@ const relics = {
       ],
     },
     k1: {
-      valuted: true,
+      vaulted: true,
       drops: [
         "burston.sk",
         "fang.bp",
@@ -80,7 +80,7 @@ const relics = {
       ],
     },
     n1: {
-      valuted: true,
+      vaulted: true,
       drops: [
         "bronco.bp",
         "fang.bd",
@@ -101,7 +101,7 @@ const relics = {
       ],
     },
     s1: {
-      valuted: true,
+      vaulted: true,
       drops: [
         "bronco.bp",
         "hikou.bp",
@@ -123,7 +123,7 @@ const relics = {
       ],
     },
     s3: {
-      valuted: true,
+      vaulted: true,
       drops: [
         "akbronco.bp",
         "carrier.sm",
@@ -559,6 +559,7 @@ const relics = {
       ],
     },
     a2: {
+      special: true,
       drops: [
         "forma",
         "lex.bl",
@@ -877,7 +878,7 @@ const items = {
     },
     // Primaries
     "boar": {
-      valuted: true,
+      vaulted: true,
       parts: {
         bl: { count: 1 },
         rv: { count: 1 },
@@ -929,7 +930,7 @@ const items = {
       }
     },
     "soma": {
-      valuted: true,
+      vaulted: true,
       parts: {
         bl: { count: 1 },
         rv: { count: 1 },
@@ -1012,7 +1013,7 @@ const items = {
     },
     // Melee
     "dakra": {
-      valuted: true,
+      vaulted: true,
       parts: {
         bd: { count: 1 },
         hl: { count: 1 },
@@ -1031,7 +1032,7 @@ const items = {
       }
     },
     "glaive": {
-      valuted: true,
+      vaulted: true,
       parts: {
         bd: { count: 2 },
         dk: { count: 1 },
@@ -1062,7 +1063,7 @@ const items = {
       }
     },
     "reaper": {
-      valuted: true,
+      vaulted: true,
       parts: {
         bd: { count: 2 },
         hl: { count: 1 },

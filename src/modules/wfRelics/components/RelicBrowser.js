@@ -26,7 +26,11 @@ import Tabs from 'grommet/components/Tabs';
 import Tab from 'grommet/components/Tab';
 import Tiles from 'grommet/components/Tiles';
 import Tile from 'grommet/components/Tile';
+import Select from 'grommet/components/Select';
+
 import CarretPrevious from 'grommet/components/icons/base/CaretPrevious';
+
+import FilterControl from 'grommet-addons/components/FilterControl';
 
 import Relic from './Relic'
 import RelicDetails from './RelicDetails'
@@ -68,18 +72,53 @@ export default class RelicBrowser extends Component {
 
   static eraList = ['lith', 'meso', 'neo', 'axi']
   static eraIndex = {'lith': 0, 'meso': 1, 'neo': 2, 'axi': 3}
+  static searchTypes = [
+    {"value": { vaulted: false, special: false }, "label": "Aquireable"},
+    {"value": { vaulted: null, special: null }, "label": "All"},
+    {"value": { vaulted: true, special: false }, "label": "Vaulted"},
+    {"value": { vaulted: false, special: true }, "label": "Special"},
+  ]
+
+  constructor(props)
+  {
+    super(props);
+    this.state = {
+      filterShown: false
+    };
+  }
 
   render() {
-    const eras = RelicBrowser.eraList.map((e, i) => {
+    const era = this.props.wfRelics.era;
+    const react_eras = RelicBrowser.eraList.map((e, i) => {
       return (<Tab key={i} title={e.toUpperCase()} />);
     });
-    const era = this.props.wfRelics.era;
-    const relics = Object.keys(libs.constants.relics[era]).map((e, i) => {
+
+    const relics = Object.keys(libs.constants.relics[era]);
+
+    const filter = this.props.wfRelics.filter;
+
+    const filtered_relics = relics.filter((e) => {
+      const name = `${era}.${e}`;
+      const relic_data = libs.getRelicData(name);
+      if (filter.vaulted != null && filter.vaulted != relic_data.vaulted) return false;
+      if (filter.special != null && filter.special != relic_data.special) return false;
+
+      if (filter.text != '')
+      {
+        const terms = filter.text.toLowerCase().split(' ');
+        const search_strs = [name].concat(relic_data.drops.map(e => libs.itemToName(e).toLowerCase()));
+        if (!search_strs.map((s) => {
+          return terms.every((t) => { return s.includes(t); });
+        }).some(t => t)) return false;
+      }
+      return true;
+    });
+
+    const react_relics = filtered_relics.map((e, i) => {
       const name = `${era}.${e}`;
       return (
         <Tile key={i}
-          onClick={() => $d($a("setRelicName")(name))}
-          >
+          onClick={() => $d($a("setRelicName")(name))} >
           <Relic relic={name} />
         </Tile>
       );
@@ -88,26 +127,45 @@ export default class RelicBrowser extends Component {
     return (
       <App>
         <Header>
-        <Search inline={true} fill={true} size='medium' dropAlign={{"left": "left"}}
-          placeHolder='Search'
-          onDOMChange={(e) => { $d($a("setRelicsFilter")(e.target.value)) }}
-        />
-        <Tabs activeIndex={RelicBrowser.eraIndex[era]}
-          onActive={(e) => { $d($a("setRelicsEra")(RelicBrowser.eraList[e])); }}>
-          {eras}
-        </Tabs>
+          <Search inline={true} fill={true} size='medium' dropAlign={{"left": "left"}}
+            placeHolder='Search'
+            onDOMChange={(e) => { $d($a("setRelicsFilter")({text: e.target.value})); }}
+          />
+          <FilterControl
+            onClick={() => { this.setState({filterShown: !this.state.filterShown}) }}
+            unfilteredTotal={relics.length}
+            filteredTotal={filtered_relics.length} />
+          <Tabs activeIndex={RelicBrowser.eraIndex[era]}
+            onActive={(e) => { $d($a("setRelicsEra")(RelicBrowser.eraList[e])); }}>
+            {react_eras}
+          </Tabs>
         </Header>
         <Article>
-          <Split flex="left">
-            <Box colorIndex='neutral-1' justify='center' align='center' pad='medium'>
-              <Tiles size="small">
-                {relics}
-              </Tiles>
-            </Box>
-            <Box colorIndex='neutral-2' justify='center' align='center' pad='medium'>
-              <RelicDetails relic={this.props.wfRelics.relic} />
-            </Box>
-          </Split>
+          {this.state.filterShown &&
+            <Section>
+              <Box>
+                <Select
+                  inline={true}
+                  value={RelicBrowser.searchTypes.find(
+                    (v) => { return v.value.special == filter.special && v.value.vaulted == filter.vaulted }
+                  )}
+                  options={RelicBrowser.searchTypes}
+                  onChange={(v) => { $d($a("setRelicsFilter")(v.option.value)); }}
+                />
+              </Box>
+            </Section>}
+          <Section>
+            <Split flex="left">
+              <Box colorIndex='neutral-1' justify='center' align='center' pad='medium'>
+                <Tiles size="small">
+                  {react_relics}
+                </Tiles>
+              </Box>
+              <Box colorIndex='neutral-2' justify='center' align='center' pad='medium'>
+                <RelicDetails relic={this.props.wfRelics.relic} />
+              </Box>
+            </Split>
+          </Section>
         </Article>
         <Footer> </Footer>
       </App>

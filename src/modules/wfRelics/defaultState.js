@@ -1,7 +1,7 @@
 
 'use babel'
 export default {
-  filter: '',
+  filter: { vaulted: false, special: false, text: '' },
   era: 'lith',
   relic: ''
 };
