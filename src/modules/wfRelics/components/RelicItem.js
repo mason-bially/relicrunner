@@ -4,12 +4,17 @@ import {compose} from 'redux';
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 
+import libs from '../libs'
+
 import {Routable, Documentable, Tagable, Testable, Typable} from '@offbyonestudios/yarl';
 
-import Image from 'grommet/components/Image';
-import Card from 'grommet/components/Card';
+import Box from 'grommet/components/Box';
+import Split from 'grommet/components/Split';
+import Sidebar from 'grommet/components/Sidebar';
+import List from 'grommet/components/List';
+import ListItem from 'grommet/components/ListItem';
 
-import libs from '../libs'
+import ItemImage from '../../wfItems/components/ItemImage';
 
 @Documentable({
   text:
@@ -37,8 +42,8 @@ import libs from '../libs'
 export default class RelicItem extends Component {
   static propTypes = {
     routeProps: PropTypes.object,
-    item: React.PropTypes.string.isRequired,
-    relic: React.PropTypes.string
+    item: PropTypes.string.isRequired,
+    relic: PropTypes.string
   }
 
   constructor(props)
@@ -68,11 +73,21 @@ export default class RelicItem extends Component {
   }
 
   render() {
+    const item_data = libs.items.getItemData(this.props.item);
+
     return (
-      <Card contentPad='none' headingStrong={false} size='small'
-        thumbnail={this.itemImage()}
-        label={libs.items.itemToName(this.props.item)} >
-      </Card>
+      <Box colorIndex='neutral-1'>
+        <Split>
+          <Sidebar><ItemImage item={this.props.item} /></Sidebar>
+          <List>
+            {item_data.is_part &&
+              <ListItem justify='between'>
+                <span>Required</span>
+                <span className='secondary'>{item_data.part.count}</span>
+              </ListItem>}
+          </List>
+        </Split>
+      </Box>
     );
   }
 }

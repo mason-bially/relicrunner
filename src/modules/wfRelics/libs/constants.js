@@ -38,7 +38,7 @@ const relics = {
     f2: {
       vaulted: true,
       drops: [
-        "odonata.sm.bp",
+        "odonata.as.bp",
         "hikou.sr",
         "paris.ub",
         "burston.bl",
@@ -92,7 +92,7 @@ const relics = {
     },
     n2: {
       drops: [
-        "carrier.sm",
+        "carrier.ss",
         "paris.ub",
         "spira.bp",
         "helios.bp",
@@ -116,7 +116,7 @@ const relics = {
       drops: [
         "akbronco.bp",
         "nyx.bp",
-        "carrier.sm",
+        "carrier.ss",
         "kavasa.bn",
         "forma",
         "soma.sk",
@@ -126,7 +126,7 @@ const relics = {
       vaulted: true,
       drops: [
         "akbronco.bp",
-        "carrier.sm",
+        "carrier.ss",
         "paris.sg",
         "ash.bp",
         "soma.rv",
@@ -179,7 +179,7 @@ const relics = {
         "braton.bp",
         "cernos.ub",
         "paris.lb",
-        "helios.sm",
+        "helios.ss",
         "tigris.bl",
         "valkyr.sm.bp"
       ],
@@ -369,7 +369,7 @@ const relics = {
   'neo': {
     a1: {
       drops: [
-        "carrier.sm",
+        "carrier.ss",
         "braton.bl",
         "forma",
         "cernos.sg",
@@ -424,7 +424,7 @@ const relics = {
       vaulted: true,
       drops: [
         "lex.bl",
-        "odonata.sm.bp",
+        "odonata.as.bp",
         "paris.sg",
         "ash.nc.bp",
         "fang.hl",
@@ -528,7 +528,7 @@ const relics = {
     },
     v3: {
       drops: [
-        "carrier.sm",
+        "carrier.ss",
         "galatine.bd",
         "paris.sg",
         "tigris.rv",
@@ -698,9 +698,9 @@ const relics = {
     v1: {
       vaulted: true,
       drops: [
-        "odonata.sm.bp",
+        "odonata.as.bp",
         "dual-kamas.bp",
-        "carrier.sm",
+        "carrier.ss",
         "volt.nc.bp",
         "forma",
         "vauban.ci.bp"

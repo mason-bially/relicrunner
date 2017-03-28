@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 
 import {Routable, Documentable, Tagable, Testable, Typable} from '@offbyonestudios/yarl';
 
+import Title from 'grommet/components/Title';
 import Card from 'grommet/components/Card';
 import Image from 'grommet/components/Image';
 
@@ -37,7 +38,8 @@ import libs from '../libs'
 export default class Relic extends Component {
   static propTypes = {
     routeProps: PropTypes.object,
-    relic: React.PropTypes.string.isRequired
+    relic: React.PropTypes.string.isRequired,
+    view: React.PropTypes.string,
   }
 
   relicImage() {
@@ -48,11 +50,22 @@ export default class Relic extends Component {
   }
 
   render() {
-    return (
-      <Card contentPad='none' headingStrong={false} size='small'
-        thumbnail={this.relicImage()}
-        label={libs.relicToName(this.props.relic)} >
-      </Card>
-    );
+    switch(this.props.view)
+    {
+      case 'title':
+        return (
+          <Title>
+            {libs.relicToName(this.props.relic)}
+          </Title>
+        );
+      default:
+      case 'card':
+        return (
+          <Card contentPad='none' headingStrong={false}
+            thumbnail={this.relicImage()}
+            label={libs.relicToName(this.props.relic)} >
+          </Card>
+        );
+    }
   }
 }

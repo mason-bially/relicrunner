@@ -5,6 +5,8 @@ function itemToImage(itemShorthand)
   let index = 0;
   let sh_parts = itemShorthand.split('.');
 
+  if (sh_parts[0] == 'forma') return 'avt/items/forma.png';
+
   let is_prime = sh_parts[index] == 'prime';
   if (is_prime) index++;
   let is_bp = sh_parts[sh_parts.length - 1] == 'bp';

@@ -9,11 +9,11 @@ const default_relic = {
 
 function getRelicData(relic)
 {
-  const relic_part = relic.split('.');
-  if (relic_part.length != 2) return null;
+  const relic_parts = relic.split('.');
+  if (relic_parts.length != 2) return null;
   return {
     ...default_relic,
-    ...constants.relics[relic_part[0]][relic_part[1]]
+    ...constants.relics[relic_parts[0]][relic_parts[1]]
   };
 }
 

@@ -9,7 +9,7 @@ import {Routable, Documentable, Tagable, Testable, Typable} from '@offbyonestudi
 import libs from '../libs'
 
 import Box from 'grommet/components/Box';
-import Title from 'grommet/components/Title';
+import Heading from 'grommet/components/Heading';
 import Accordion from 'grommet/components/Accordion';
 import AccordionPanel from 'grommet/components/AccordionPanel';
 
@@ -50,7 +50,7 @@ export default class RelicDetails extends Component {
     if (this.props.relic == undefined || this.props.relic == '')
       return (
         <Box>
-          <Title>No Relic Selected</Title>
+          <Heading>No Relic Selected</Heading>
         </Box>
       );
 
@@ -58,7 +58,8 @@ export default class RelicDetails extends Component {
     const items = relicData['drops'].map((e, i) => {
       const itemName = (e != 'forma') ? 'prime.' + e : e;
       return (
-        <AccordionPanel key={i} heading={libs.items.itemToName(itemName)}>
+        <AccordionPanel key={i} pad='none'
+          heading={<Heading tag='h6'>{libs.items.itemToName(itemName)}</Heading>}>
           <RelicItem item={itemName} relic={this.props.relic} />
         </AccordionPanel>
       );
@@ -66,8 +67,9 @@ export default class RelicDetails extends Component {
 
     return (
       <Box>
-        <Title>{libs.relicToName(this.props.relic)}</Title>
-        <Accordion animate={false} openMulti={false}>
+        <Heading tag='h1'>{libs.relicToName(this.props.relic)}</Heading>
+        <Heading tag='h3'>Contents</Heading>
+        <Accordion animate={false} openMulti={false} size='xsmall'>
           {items}
         </Accordion>
       </Box>

@@ -1,11 +1,12 @@
 'use babel'
 
 const shorthandNames = {
+  as: 'Systems', // Archwing
   bp: 'Blueprint',
   bd: 'Blade',
-  bn: 'Band',
-  bl: 'Barrel',
   bk: 'Buckle',
+  bl: 'Barrel',
+  bn: 'Band',
   ce: 'Carapace',
   ci: 'Chassis',
   cm: 'Cerebrum',
@@ -23,8 +24,9 @@ const shorthandNames = {
   rv: 'Receiver',
   sg: 'String',
   sk: 'Stock',
-  sm: 'Systems',
+  sm: 'Systems', // Warframe
   sr: 'Stars',
+  ss: 'Systems', // Sentinal
   ub: 'Upper Limb',
   wg: 'Wings',
 }

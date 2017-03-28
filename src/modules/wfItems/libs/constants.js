@@ -106,8 +106,8 @@ const items = {
       vaulted: true,
       parts: {
         hs: { count: 1 },
-        sm: { count: 1 },
         wg: { count: 1 },
+        as: { count: 1 },
       },
     },
     // Sentinels
@@ -115,14 +115,14 @@ const items = {
       parts: {
         ce: { count: 1 },
         cm: { count: 1 },
-        sm: { count: 1 },
+        ss: { count: 1 },
       }
     },
     "helios": {
       parts: {
         ce: { count: 1 },
         cm: { count: 1 },
-        sm: { count: 1 },
+        ss: { count: 1 },
       }
     },
     // Primaries
