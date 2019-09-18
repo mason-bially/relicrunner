@@ -35,7 +35,7 @@
     "babel-eslint": "^7.2.1",
     "babel-loader": "^6.4.1",
     "babel-preset-react": "^6.23.0",
-    "electron": "^1.6.2",
+    "electron": "^1.8.8",
     "eslint": "^3.17.1",
     "eslint-plugin-react": "^6.10.0",
     "json-loader": "^0.5.4",
